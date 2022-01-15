@@ -1,8 +1,8 @@
 const mongoose =require("mongoose")
 
-mongoose.connect("mongodb://localhost:27017/review",{ useNewUrlParser: true })
+mongoose.connect("mongodb://localhost:27017/donation",{ useNewUrlParser: true })
 .then(()=>{
- console.log("database connected")
+ console.log("Database connected")
 }).catch((err)=>{
  console.log(err)
 })

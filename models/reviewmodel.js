@@ -1,11 +1,13 @@
 const mongoose = require("mongoose")
 
 const reviewSchema =new mongoose.Schema({
-    username:String,
-    reviewarea:String,
-    rating:Number 
+        mName:String,
+        bName:String,
+        dosage:String,
+        quantity:String,
+        eDate:String
 })
 
-const Review = new mongoose.model('Review',reviewSchema)
+const Donation = new mongoose.model('Donation',reviewSchema)
 
-module.exports = Review
+module.exports = Donation

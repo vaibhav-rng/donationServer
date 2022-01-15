@@ -10,13 +10,15 @@ app.use(cors())
 app.use(express.json())
 
 
-app.post("/review",async(req,res)=>{
+app.post("/donation",async(req,res)=>{
 try{
-     const username =req.body.username
-     const reviewarea =req.body.reviewarea
-     const rating =req.body.rating
+     const mName =req.body.mName
+     const bName =req.body.bName
+     const dosage =req.body.dosage
+     const quantity=req.body.quantity
+     const eDate=req.body.eDate
 
-     const rpost =  new review({username:username,reviewarea:reviewarea,rating:rating})
+     const rpost =  new review({mName,bName,dosage,quantity,eDate})
      await rpost.save()
 }
 catch(err){
@@ -24,7 +26,7 @@ catch(err){
 }
 })
 
-app.get("/review",async(req,res)=>{
+app.get("/donation",async(req,res)=>{
     try{
        const rget = await review.find()
         res.send(rget)
